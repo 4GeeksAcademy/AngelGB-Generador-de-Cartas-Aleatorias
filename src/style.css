@@ -1,1 +1,22 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+#carta {
+  background-color: green;
+  font-size: 3rem;
+  border-radius: 5%;
+  border: solid;
+  box-shadow: 5px 5px 5px black;
+}
+
+.arribaizq {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+.centro {
+  margin-top: 45%;
+  margin-bottom: 45%;
+}
+.abajoder {
+  padding-bottom: 5%;
+  padding-right: 5%;
+}

@@ -11,32 +11,24 @@ window.onload = function() {
   let numeroGen = document.getElementById("centro");
   let genButton = document.getElementById("boton");
 
+  let palos = ["♦", "♥", "♠", "♣"];
+  let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K"];
+
   function genCarta() {
-    let palo = Math.floor(Math.random() * 4) + 1;
-    let numero = Math.floor(Math.random() * 12) + 1;
-    if (palo === 1) {
-      palo = "♦";
-    } else if (palo === 2) {
-      palo = "♥";
-    } else if (palo === 3) {
-      palo = "♠";
-    } else palo = "♣";
-    if (numero === 10) {
-      numero = "J";
-    } else if (numero === 11) {
-      numero = "Q";
-    } else if (numero === 12) {
-      numero = "K";
-    }
-    if (palo === "♥") {
-      paloGen1.innerHTML = `<p style="color: red;">♥</p>`;
-    } else paloGen1.innerHTML = `<p>${palo}</p>`;
-    if (palo === "♥") {
-      paloGen2.innerHTML = `<p style="color: red;">♥</p>`;
-    } else paloGen2.innerHTML = `<p>${palo}</p>`;
-    numeroGen.innerHTML = numero;
+    let palo = palos[Math.floor(Math.random() * palos.length)];
+    let numero = numeros[Math.floor(Math.random() * numeros.length)];
+
+    let color = palo === "♥" || palo === "♦" ? "red" : "black";
+
+    let colorPalo = `<p style="color: ${color};">${palo}</p>`;
+    let colorNumero = `<p style="color: ${color};">${numero}</p>`;
+
+    paloGen1.innerHTML = colorPalo;
+    paloGen2.innerHTML = colorPalo;
+    numeroGen.innerHTML = colorNumero;
   }
+
   genButton.addEventListener("click", genCarta);
   genCarta();
-  setTimeout(genCarta, 10000);
+  setInterval(genCarta, 10000);
 };

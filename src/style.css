@@ -32,3 +32,11 @@ body {
   font-size: 4rem;
   transform: rotateX(180deg);
 }
+
+#carta2 {
+  background-color: rgb(245, 245, 245);
+  font-size: 3rem;
+  border-radius: 5%;
+  border: solid 20px;
+  box-shadow: 10px 10px 10px black;
+}

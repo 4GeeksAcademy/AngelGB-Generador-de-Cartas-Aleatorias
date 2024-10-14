@@ -6,10 +6,13 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  let paloGen1 = document.querySelector("#arribaizq");
-  let paloGen2 = document.querySelector("#abajoder");
-  let numeroGen = document.getElementById("centro");
-  let genButton = document.getElementById("boton");
+  const imputWidth = document.querySelector("#imputWidth");
+  const imputheight = document.querySelector("#imputheight");
+  const carta = document.querySelector("#carta");
+  const paloGen1 = document.querySelector("#arribaizq");
+  const paloGen2 = document.querySelector("#abajoder");
+  const numeroGen = document.getElementById("centro");
+  const genButton = document.getElementById("boton");
 
   let palos = ["♦", "♥", "♠", "♣"];
   let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K"];
@@ -27,6 +30,19 @@ window.onload = function() {
     paloGen2.innerHTML = colorPalo;
     numeroGen.innerHTML = colorNumero;
   }
+  function TamañoCarta(tamaño) {
+    if (tamaño.key === "Enter") {
+      let width = imputWidth.value || 400;
+      let height = imputheight.value || 600;
+      carta.style.width = `${width}px`;
+      carta.style.height = `${height}px`;
+
+      // let fontSize = height * 0.15;
+      // carta.style.fontSize = `${fontSize}px`;
+    }
+  }
+  imputWidth.addEventListener("keydown", TamañoCarta);
+  imputheight.addEventListener("keydown", TamañoCarta);
 
   genButton.addEventListener("click", genCarta);
   genCarta();

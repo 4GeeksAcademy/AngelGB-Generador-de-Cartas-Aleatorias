@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Generador de cartas</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -17,21 +17,22 @@
     <div class="titulo text-center m-3">
       <h1><strong>Generador de cartas aleatorias</strong></h1>
     </div>
-    <div class="container text-center col-2">
+    <div class="container text-center col-9 col-sm-8 col-md-5 col-lg-3">
       <div class="row justify-content-center input-group m-2">
+        <h4><strong>Introduce el width y el height en px</strong></h4>
         <input
           id="imputWidth"
           type="number"
           aria-label="First name"
           class="form-control"
-          placeholder="width"
+          placeholder="width min-150"
         />
         <input
           id="imputheight"
           type="number"
           aria-label="Last name"
           class="form-control"
-          placeholder="height"
+          placeholder="height min-200"
         />
       </div>
     </div>
@@ -45,9 +46,6 @@
       <button id="boton" class="btn btn-primary" type="submit">
         Click para generar otra carta
       </button>
-      <!-- <button class="btn btn-primary" type="submit">
-        Modo Magic
-      </button> -->
     </div>
   </body>
 </html>
